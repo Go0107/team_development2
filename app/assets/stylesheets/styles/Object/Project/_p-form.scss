@@ -1,0 +1,201 @@
+@import '../../Foundation/mixin';
+@import '../../Foundation/variable';
+@import '../../Foundation/base';
+
+.p-form {
+  &__error {
+    &.priority {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: $error-light-red;
+      border: solid 1px $red;
+      border-radius: 2px;
+      text-align: left;
+    }
+
+    &__item {
+      &.priority {
+        font-size: 14px;
+        color: $dark-grey;
+        display: block;
+      }
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__input {
+
+    &-field {
+      margin-bottom: 30px;
+      @include smartphone {
+        margin-bottom: 20px;
+      }
+
+      &-wrapper {
+        position: relative;
+        &::before {
+          position: absolute;
+          content: '';
+          display: block;
+          border-top: 4px solid $dark-grey;
+          border-right: 4px solid transparent;
+          border-bottom: 4px solid transparent;
+          border-left: 4px solid transparent;
+          top: 18px;
+          left: 135px;
+        }
+      }
+
+      label {
+        display: inline-block;
+        font-weight: 500;
+        margin-bottom: 7px;
+        font-size: 12px;
+        color: $dark-grey;
+
+        &.require {
+          &::after {
+            content: '(*必須)';
+            color: $dark-grey;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 2px;
+          }
+        }
+
+        &.require_description {
+          &::after {
+            content: '(*必須 170字まで)';
+            color: $dark-grey;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 2px;
+          }
+        }
+
+        &.option {
+          &::after {
+            content: '(*任意)';
+            color: $dark-grey;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 2px;
+          }
+        }
+      }
+
+      span {
+        display: inline-block;
+        font-weight: 500;
+        margin-bottom: 7px;
+        font-size: 12px;
+        color: $dark-grey;
+      }
+
+      input {
+        width: 100%;
+        height: 42px;
+        border-radius: 2px;
+        border: solid 1px #c0c6d6;
+        background-color: #ffffff;
+        font-size: 14px;
+        color: $dark-grey;
+        padding-left: 15px;
+        @include smartphone {
+          font-size: 16px;
+        }
+      }
+
+      select {
+        width: 160px;
+        display: block;
+        height: 42px;
+        border-radius: 2px;
+        border: solid 1px #c0c6d6;
+        background-color: #ffffff;
+        font-size: 14px;
+        color: $dark-grey;
+        padding-left: 15px;
+        appearance: none;
+
+        option {
+          background-color: #fff;
+          color: #333;
+        }
+
+        option:first-child{
+          background:green;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        height: 131px;
+        border-radius: 2px;
+        border: solid 1px #c0c6d6;
+        background-color: #ffffff;
+        font-size: 14px;
+        color: $dark-grey;
+        padding: 14px;
+        resize: none;
+        @include smartphone {
+          font-size: 16px;
+          padding: 10px;
+        }
+      }
+    }
+
+    &-submit {
+      text-align: center;
+      padding-top: 20px;
+      font-weight: bold;
+      margin-bottom: 100px;
+      @include smartphone {
+        margin-bottom: 50px;
+      }
+    }
+  }
+  &__file-field {
+    margin-bottom: 30px;
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: $dark-grey;
+
+      &.option_image {
+        &::after {
+          content: 'を登録(任意)';
+          color: $dark-grey;
+          font-size: 12px;
+          font-weight: 500;
+          margin-left: 2px;
+        }
+      }
+    }
+
+    input {
+      display: none;
+    }
+
+    span {
+      @extend %transition;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      @include smartphone {
+        font-size: 16px;
+      }
+    }
+
+    img {
+      display: none;
+      margin-top: 20px;
+    }
+  }
+}

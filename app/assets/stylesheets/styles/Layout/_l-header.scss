@@ -1,0 +1,50 @@
+@import '../Foundation/mixin';
+@import '../Foundation/variable';
+@import '../Foundation/base';
+
+.l-header {
+  box-shadow: 0 0 15px $box-shadow;
+  background-color: $white;
+  padding: 0 0 0 20px;
+  @include tablet {
+    padding: 15px 20px;
+  }
+  @include smartphone {
+    padding: 0 10px;
+  }
+  @include flex(between, center);
+  &__author {
+    margin-left: 10px;
+    padding-top: 6px;
+    @include smartphone {
+      padding-top: 4px;
+    }
+  }
+  &__site {
+    &-title {
+      @include flex(start, center);
+    }
+
+    &-author {
+      display: block;
+      color: $grey;
+      font-size: 12px;
+      line-height: 1.4em;
+      @include smartphone {
+        font-size: 10px;
+        line-height: 1.2em;
+      }
+    }
+  }
+  &__logo {
+    width: 180px;
+    height: 40px;
+    @include smartphone {
+      width: 140px;
+      height: auto;
+    }
+    a:hover {
+      opacity: .7;
+    }
+  }
+}
