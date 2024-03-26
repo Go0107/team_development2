@@ -1,0 +1,28 @@
+@import '../../Foundation/variable';
+
+.c-dropdown {
+  a:hover {
+    text-decoration: none;
+  }
+
+  &-dots {
+    width: 4px;
+    height: 4px;
+    background-color: $grey;
+    display: inline-block;
+    border-radius: 6px;
+  }
+
+  // ドロップダウン内のアイコンのカラー
+  &-item {
+    color: $dark-grey;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .c-dropdown {
+    .dropdown-menu {
+      top: 40px;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import '../../Foundation/variable';
+@import '../../Foundation/mixin';
+@import '../../Foundation/selector';
+
+// サイドバーのコンポーネント
+
+.c-sidebar {
+
+  // 人気記事のコンポーネント
+  &__popular-article {
+    // わかった数の数字部分
+    &__wakatta {
+      margin: 0 3px 0 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    // カテゴリーのコンポーネント
+    &__category {
+      font-size: 12px;
+      color: $dark-grey;
+      padding: 3px 10px;
+      border-radius: 2px;
+      border: solid 1px $grey;
+      margin-left: 10px;
+      display: inline-block;
+    }
+    &__link {
+      font-size: 18px;
+      @extend %timeline_hover-link;
+    }
+  }
+}

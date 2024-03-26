@@ -1,0 +1,44 @@
+@import '../../Foundation/variable';
+@import '../../Foundation/mixin';
+
+.c-image {
+  &__big__round {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid 1px $light-blue;
+  }
+
+  &__middle__round {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid 1px $light-blue;
+  }
+
+  &__small__round {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid 1px #CBE2FE;
+  }
+
+  &__square {
+    max-width: 400px;
+    margin: 30px auto;
+    border-radius: 2px;
+    border: solid 1px $light-blue;
+    @include smartphone {
+      width: 100%;
+    }
+  }
+
+  &__middle__square {
+    width: 400px;
+    object-fit: cover;
+    border: solid 1px $light-blue;
+  }
+}

@@ -1,0 +1,31 @@
+@import '../../Foundation/mixin';
+@import '../../Foundation/variable';
+
+.p-button {
+  // トップページの検索ボタン
+  &__hero-search {
+    width: 140px;
+    @include smartphone {
+      width: 80px;
+    }
+  }
+  // 記事詳細のわかったボタン
+  &__wakatta {
+    position: absolute;
+    top: 0;
+    left: -110px;
+    // タブレット以下でボタンを移動
+    @include tablet {
+      @include flex();
+      left: auto;
+      right: 0;
+      z-index: 1;
+    }
+    // わかった数のカウント部分のスタイル
+    @include tablet {
+      &__counts {
+        margin-left: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@import './variable';
+@import './mixin';
+
+%timeline_hover-link {
+  &:hover {
+    color: $hover-light-blue;
+  }
+}

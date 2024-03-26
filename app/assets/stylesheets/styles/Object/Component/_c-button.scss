@@ -1,0 +1,209 @@
+// ボタンのコンポーネント
+
+@import '../../Foundation/variable';
+@import '../../Foundation/mixin';
+
+.c-button {
+  padding: 16px 24px;
+  font-size: 16px;
+  color: $white !important;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  // 基本の四角い黄色いボタン
+  &--square-yellow {
+    @extend .c-button;
+    border-radius: 4px;
+    background-color: $yellow;
+      &:hover {
+        background-color: $dark-yellow;
+      }
+  }
+  // ボーダーで灰色のボタン
+  &--square-light-blue {
+    @extend .c-button;
+    background-color: $light-blue !important;
+    &:hover {
+      border-color: $dark-grey;
+      color: $dark-grey !important;
+    }
+  }
+  // ヘッダーの無料会員登録ボタン
+  &--header {
+    @extend .c-button--square-yellow;
+    padding: 11px 25px;
+    font-size: 12px;
+    font-weight: bold;
+    @include tablet {
+      display: block;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+  // ユーザー登録のボタン
+  &--submit {
+    @extend .c-button--square-yellow;
+    padding: 12px 22px;
+    text-align: center;
+    cursor: pointer;
+    @include smartphone {
+      width: 100%;
+      padding: 11px 22px;
+    }
+  }
+  // 検索ボタン
+  &--search {
+    @extend .c-button--square-yellow;
+    padding: 11px;
+    font-size: 16px;
+    font-weight: bold;
+    @include smartphone {
+      padding: 9px;
+    }
+  }
+  // 並び替えボタン
+  &--order {
+    @extend .c-button--square-light-blue;
+  }
+
+  // 画像投稿ボタン
+  &--image {
+    display: inline-block;
+    padding: 8px 12px;
+    @extend .c-button--square-yellow;
+    @include smartphone {
+      display: block;
+      padding: 11px 12px;
+      font-size: 14px;
+      font-weight: normal;
+      text-align: center;
+    }
+  }
+  // コメントを投稿する部分での会員登録ボタン
+  &--comment-registration {
+    padding: 7px 13px;
+    @extend .c-button--square-yellow;
+    @include smartphone {
+      padding: 9px 13px;
+    }
+  }
+
+  &--comment-post {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 7px 14px;
+    @extend .c-button--square-yellow;
+    @include smartphone {
+      width: 100%;
+      margin-top: 10px;
+      padding: 11px 14px;
+      font-size: 16px;
+    }
+  }
+
+  &--wakatta-number {
+    @extend .c-button;
+    @include flex(0, center);
+    border-radius: 2px;
+    box-shadow: 0 0 15px $box-shadow;
+    background-color: $light-yellow;
+    padding: 2px 8px 2px 34px;
+    font-size: 12px;
+    @include smartphone {
+      padding: 2px 6px 2px 30px;
+      font-size: 14px;
+    }
+    // 数字の部分
+    span {
+      font-size: 18px;
+      font-weight: bold;
+      @include smartphone {
+        font-size: 18px;
+      }
+    }
+  }
+
+
+  &--wakatta-button {
+    width: 74px;
+    height: 74px;
+    border: 2px solid #c9ced9;
+    border-radius: 999px;
+    background: $white url('/images/bulb_off.svg') no-repeat center / 26px auto;
+    transition: none !important;
+    &:hover {
+      background: $white url('/images/bulb_on.svg') no-repeat border-box center 20px/26px;
+      border-color: #ffe79a;
+    }
+    @include tablet {
+      width: 50px;
+      height: 50px;
+      background-size: 20px auto;
+      &:hover {
+        background: $white url('/images/bulb_off.svg') no-repeat center / 20px auto;
+        border-color: #c9ced9;
+      }
+    }
+    // クリックされたら
+    &.is-active {
+      border: 2px solid #FFE79B;
+      box-shadow: 0 0 15px 0 $light-yellow;
+      background: $white url('/images/bulb_on.svg') no-repeat border-box center 20px/26px;
+      transition: none;
+      @include tablet {
+        border-color: $light-yellow;
+        background-position: center;
+        background-size: 20px auto;
+      }
+    }
+    // わかった数
+    &__number {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1em;
+      color: $dark-grey;
+      text-decoration: none;
+      &.is-active {
+        color: $light-yellow;
+      }
+      @include tablet {
+        text-align: left;
+      }
+      @include smartphone {
+        font-size: 14px;
+      }
+    }
+    // わかった！の文字
+    &__text {
+      margin: 5px 0 0 8px;
+      font-size: 12px;
+      text-align: center;
+      line-height: 1em;
+      color: $dark-grey;
+      text-decoration: none;
+      &.is-active {
+        color: $light-yellow;
+      }
+      @include tablet {
+        text-align: left;
+        margin: 5px 0 0 0;
+      }
+      @include smartphone {
+        font-size: 12px;
+      }
+    }
+  }
+  &--wakatta__square {
+    @extend .c-button--square-yellow;
+    padding: 2px 10px;
+    font-size: 12px;
+    &:hover {
+      background-color: $yellow;
+    }
+  }
+}

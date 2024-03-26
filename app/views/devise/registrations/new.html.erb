@@ -1,0 +1,24 @@
+<div class="l-main">
+  <div class="l-main__header">
+    <h2 class="l-main__header__title">無料新規登録</h2>
+  </div>
+  <div class="l-form">
+    <%= form_with model: @user, url: user_registration_path, class: 'p-form__input', local: true do |f| %>
+      <div class="p-form__input-field">
+        <%= f.label :email, class: 'require' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="p-form__input-field">
+        <%= f.label :password, class: 'require' %>
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+      <div class="p-form__input-field">
+        <%= f.label :password_confirmation, class: 'require' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+      <div class="p-form__input-submit">
+        <%= f.submit "この内容で新規登録", class: 'p-button c-button--submit' %>
+      </div>
+    <% end %>
+  </div>
+</div>

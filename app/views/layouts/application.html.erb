@@ -3,6 +3,8 @@
   <head>
     <title>TeamDevelopment2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +13,52 @@
   </head>
 
   <body>
+    <%# headerここから %>
+    <header class="l-header" id="header">
+      <div class="l-header__site-title">
+        <div class="l-header__logo">
+          <h1>
+            <%= link_to root_path do %>
+              <%= image_tag 'logo.svg', alt: 'ロゴ',size: '230x40' %>
+            <% end %>
+          </h1>
+        </div>
+      </div>
+      <div class="l-header__navigation">
+        <nav class="l-gnav">
+        <% if user_signed_in? %>
+          <div class="l-gnav__contents--before-login">
+            <ul class="l-gnav__list">
+              <li class="l-gnav__button">
+                <%= link_to '日報を投稿する', new_report_path, style: "text-decoration: none; color: blue;margin-right:15px;", class: 'c-button--square-yellow' %>
+              </li>
+              <li class="l-gnav__user-link">
+                    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, style: "margin-right:15px;" %>
+              </li>
+              <li>
+                <%= link_to 'マイページ', '#', style: "margin-right:15px;" %>
+              </li>
+            </ul>
+          </div>
+        <% else %>
+          <div class="l-gnav__contents--before-login">
+            <ul class="l-gnav__list">
+              <li class="l-gnav__button">
+                <%= link_to '日報を投稿する', new_report_path, style: "text-decoration: none; color: blue;", class: 'c-button--square-yellow' %>
+              </li>
+              <li class="l-gnav__link">
+                <%= link_to 'ログイン',new_user_session_path, style: "text-decoration: none; color: blue; padding-left:30px; font-weight:bold;font-size:17px;", class: "login-button" %>
+              </li>
+              <li class="l-gnav__button">
+                <%= link_to '無料会員登録',new_user_registration_path, style: "text-decoration: none; color: blue;", class: 'c-button--square-yellow' %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
+        </nav>
+      </div>
+    </header>
+    <%# headerここまで %>
     <%= yield %>
   </body>
 </html>
