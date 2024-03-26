@@ -1,0 +1,31 @@
+<div class="l-main__contents">
+  <div class="l-main__contents__box">
+    <div class="l-article__wrapper">
+      <% @reports.each do |post| %>
+        <div class="l-article">
+          <div class="l-article__header">
+            <div class="l-article__header--left">
+              <div class="l-article__category-box">
+                <time><%= post.created_at.strftime('%Y.%-m.%d') %></time>
+              </div>
+            </div>
+          </div>
+          <div class="l-article__main">
+            <div>
+              <h1><%=post.study_curriculum%></h1>
+            </div>
+            <div>
+              <p><%=post.study_content%></p>
+            </div>
+            <div>
+              <p><%=post.study_time%>時間</p>
+            </div>
+            <div class="l-article__description">
+              <%= simple_format(post.reflection) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

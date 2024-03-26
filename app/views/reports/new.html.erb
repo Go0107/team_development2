@@ -1,27 +1,27 @@
 <div class="l-main">
   <div class="l-main__header">
-    <h2 class="l-main__header__title">日報を投稿する</h2>
+    <h2 class="l-main__header__title text-green">日報を投稿する</h2>
   </div>
   <div class="l-form">
-    <%= form_with model: @post, local: true, class: 'p-form__input' do |f| %>
+    <%= form_with model: @report, local: true, class: 'p-form__input' do |f| %>
       <div class="p-form__input-field">
-        <%= f.label :"カリキュラムを選択する" %>
-        <%= f.text_field :"hoge", autofocus: true %>
+        <%= f.label :"学習時間を選択する" %>
+        <%= f.text_field :"study_time", autofocus: true %>
+      </div>
+
+      <div class="p-form__input-field">
+        <%= f.label :"カリキュラムを選択する", class: 'require' %>
+        <%= f.text_field :study_curriculum, autofocus: true %>
       </div>
 
       <div class="p-form__input-field">
         <%= f.label :"学習内容", class: 'require' %>
-        <%= f.text_field :hoge, autofocus: true %>
+        <%= f.text_area :study_content, autofocus: true %>
       </div>
 
       <div class="p-form__input-field">
-        <%= f.label :"学習時間を選択する", class: 'require_description' %>
-        <%= f.text_area :hoge, autofocus: true %>
-      </div>
-
-      <div class="p-form__input-field">
-        <%= f.label :"振り返り", class: 'require_description' %>
-        <%= f.text_area :hoge, autofocus: true %>
+        <%= f.label :"振り返り", class: 'require' %>
+        <%= f.text_area :reflection, autofocus: true %>
       </div>
 
       <div class="p-form__input-submit">
