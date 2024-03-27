@@ -1,0 +1,27 @@
+<h1 style="text-align:center;">プロフィール</h1>
+
+<h2 style="text-align:center; margin-top:50px;">ユーザー名</h2>
+<h3 style="text-align:center;"><%= @user.name %>のユーザーページ</h3>
+
+<h2 style="text-align:center; margin-top:50px;">メールアドレス</h2>
+<h3 style="text-align:center;"><%= @user.email %></h3>
+
+<h1 style="text-align:center;">自分の日報一覧</h1>
+<div style="text-align:center;">
+  <% @posts.each do |post| %>
+    <div class="l-article__main">
+      <div>
+        <h1><%=post.study_curriculum%></h1>
+      </div>
+      <div>
+        <p><%=post.study_content%></p>
+      </div>
+      <div>
+        <p><%=post.study_time%>時間</p>
+      </div>
+      <div class="l-article__description">
+        <%= simple_format(post.reflection) %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -33,10 +33,10 @@
                 <%= link_to '日報を投稿する', new_report_path, style: "text-decoration: none; color: blue;margin-right:15px;", class: 'c-button--square-yellow' %>
               </li>
               <li class="l-gnav__user-link">
-                    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, style: "margin-right:15px;" %>
+                    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete,data: { turbo_method: :delete }, style: "margin-right:15px;" %>
               </li>
               <li>
-                <%= link_to 'マイページ', '#', style: "margin-right:15px;" %>
+                <%= link_to 'マイページ', user_path(current_user), style: "margin-right:15px;" %>
               </li>
             </ul>
           </div>

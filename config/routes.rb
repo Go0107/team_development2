@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'tops#index'
   resources :reports
+  resources :users, only: [:show]
 
 end

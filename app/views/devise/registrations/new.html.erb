@@ -9,6 +9,10 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
       <div class="p-form__input-field">
+        <%= f.label :name, class: 'require' %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="p-form__input-field">
         <%= f.label :password, class: 'require' %>
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
