@@ -71,8 +71,8 @@
     border: solid 1px #c0c6d6;
     border-radius: 10px;
     margin-bottom: 15px;
-    padding: 10px;
-    height: 55px;
+    /* padding: 10px; */
+    height: 60px;
     position:relative;
 }
 
@@ -80,6 +80,7 @@
     float: left;
     padding-left: 50px;
     padding-right: 100px;
+    line-height: 60px;
 }
 
 .award-bool {
