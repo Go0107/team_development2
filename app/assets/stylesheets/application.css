@@ -53,13 +53,17 @@
 
 .title {
     text-align: center;
-    margin-top: 70px;
+    margin-top: 50px;
     margin-bottom: 30px;
     /* padding-left: 50px; */
 }
 
 .title h1 {
     font-size: 70px;
+}
+
+.main-wrapper {
+    padding-bottom: 70px;
 }
 
 .container {
