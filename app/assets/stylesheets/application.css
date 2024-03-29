@@ -48,3 +48,52 @@
 .my-journals-title h1 {
     padding-left: 30px;
 }
+
+/* award */
+
+.title {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    /* padding-left: 50px; */
+}
+
+.title h1 {
+    font-size: 70px;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+}
+
+.one-award {
+    border: solid 1px #c0c6d6;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    height: 55px;
+    position:relative;
+}
+
+.award-title {
+    float: left;
+    padding-left: 50px;
+    padding-right: 100px;
+}
+
+.award-bool {
+    float: right;
+    padding-right: 50px;
+}
+
+.award-bool {
+    position:absolute;
+    top: 55%;
+    left: 83%;
+    transform: translateY(-50%);
+}
+
+.award-bool img {
+    width: 80px;
+}

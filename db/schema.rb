@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_27_033453) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_29_043414) do
   create_table "reports", force: :cascade do |t|
     t.integer "user_id"
     t.date "date"
@@ -21,6 +21,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_27_033453) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_reports_on_user_id"
+  end
+
+  create_table "user_awards", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.boolean "award_1"
+    t.boolean "award_2"
+    t.boolean "award_3"
+    t.boolean "award_4"
+    t.boolean "award_5"
+    t.boolean "award_6"
+    t.boolean "award_7"
+    t.boolean "award_8"
+    t.boolean "award_9"
+    t.boolean "award_10"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_awards_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +54,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_27_033453) do
   end
 
   add_foreign_key "reports", "users"
+  add_foreign_key "user_awards", "users"
 end
