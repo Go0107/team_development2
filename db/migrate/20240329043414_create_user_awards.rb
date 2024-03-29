@@ -1,4 +1,4 @@
-class CreateUserAwards < ActiveRecord::Migration[7.0]
+class CreateUserAwards < ActiveRecord::Migration[7.1]
   def change
     create_table :user_awards do |t|
       t.references :user, null: false, foreign_key: true
