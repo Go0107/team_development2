@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
   def configure_permitted_parameters
-      #新規登録時のストロングパラメータに「username」の追加
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 end
