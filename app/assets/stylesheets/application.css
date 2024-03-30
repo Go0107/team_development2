@@ -99,6 +99,14 @@
     transform: translateY(-50%);
 }
 
-.award-bool img {
+.yes {
     width: 80px;
+}
+
+.no {
+    width: 35px;
+}
+
+.not {
+    padding: 20px;
 }
