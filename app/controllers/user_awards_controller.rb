@@ -12,5 +12,9 @@ class UserAwardsController < ApplicationController
       "振り返りの文字数が150文字を超える",
       "10時間以上勉強する",
     ]
+    @current_user = current_user
+
+    @user_awards = UserAward.find_by(user_id: @current_user.id)
+
   end
 end

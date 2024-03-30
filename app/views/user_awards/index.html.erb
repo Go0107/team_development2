@@ -11,9 +11,15 @@
                 <div class="award-title">
                     <p><%= award %></p>
                 </div>
-                <div class="award-bool">
-                    <img src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
-                </div>
+                <% if @user_awards %>
+                    <div class="award-bool">
+                        <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
+                    </div>
+                <% else %>
+                    <div class="award-bool not">
+                        <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
+                    </div>
+                <% end %>
             </div>
         <% end %>
     </div>
