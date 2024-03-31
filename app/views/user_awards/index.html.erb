@@ -5,22 +5,131 @@
 </div>
 <div class="main-wrapper">
     <div class="container">
-        <!-- each文でアワードを入れるのもあり -->
-        <% @awards.each do |award| %>
-            <div class="one-award">
-                <div class="award-title">
-                    <p><%= award %></p>
-                </div>
-                <% if @user_awards %>
-                    <div class="award-bool">
-                        <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
-                    </div>
-                <% else %>
-                    <div class="award-bool not">
-                        <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
-                    </div>
-                <% end %>
+       <div class="one-award">
+            <div class="award-title">
+                <p><%= @awards[0] %></p>
             </div>
-        <% end %>
+            <% if @user_awards&.award_1 == true %>
+                <div class="award-bool">
+                    <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
+                </div>
+            <% else %>
+                <div class="award-bool not">
+                    <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
+                </div>
+            <% end %>
+        </div>
+        <div class="one-award">
+            <div class="award-title">
+                <p><%= @awards[1] %></p>
+            </div>
+            <% if @user_awards&.award_2 == true %>
+                <div class="award-bool">
+                    <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
+                </div>
+            <% else %>
+                <div class="award-bool not">
+                    <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
+                </div>
+            <% end %>
+        </div>
+        <div class="one-award">
+            <div class="award-title">
+                <p><%= @awards[3] %></p>
+            </div>
+            <% if @user_awards&.award_4 == true %>
+                <div class="award-bool">
+                    <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
+                </div>
+            <% else %>
+                <div class="award-bool not">
+                    <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
+                </div>
+            <% end %>
+        </div>
+        <div class="one-award">
+            <div class="award-title">
+                <p><%= @awards[4] %></p>
+            </div>
+            <% if @user_awards&.award_5 == true %>
+                <div class="award-bool">
+                    <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
+                </div>
+            <% else %>
+                <div class="award-bool not">
+                    <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
+                </div>
+            <% end %>
+        </div>
+        <div class="one-award">
+            <div class="award-title">
+                <p><%= @awards[5] %></p>
+            </div>
+            <% if @user_awards&.award_6 == true %>
+                <div class="award-bool">
+                    <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
+                </div>
+            <% else %>
+                <div class="award-bool not">
+                    <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
+                </div>
+            <% end %>
+        </div>
+        <div class="one-award">
+            <div class="award-title">
+                <p><%= @awards[6] %></p>
+            </div>
+            <% if @user_awards&.award_7 == true %>
+                <div class="award-bool">
+                    <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
+                </div>
+            <% else %>
+                <div class="award-bool not">
+                    <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
+                </div>
+            <% end %>
+        </div>
+        <div class="one-award">
+            <div class="award-title">
+                <p><%= @awards[7] %></p>
+            </div>
+            <% if @user_awards&.award_8 == true %>
+                <div class="award-bool">
+                    <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
+                </div>
+            <% else %>
+                <div class="award-bool not">
+                    <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
+                </div>
+            <% end %>
+        </div>
+        <div class="one-award">
+            <div class="award-title">
+                <p><%= @awards[8] %></p>
+            </div>
+            <% if @user_awards&.award_9 == true %>
+                <div class="award-bool">
+                    <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
+                </div>
+            <% else %>
+                <div class="award-bool not">
+                    <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
+                </div>
+            <% end %>
+        </div>
+        <div class="one-award">
+            <div class="award-title">
+                <p><%= @awards[9] %></p>
+            </div>
+            <% if @user_awards&.award_10 == true %>
+                <div class="award-bool">
+                    <img class="yes" src="https://www.bezybox.net/sozai/wp-content/uploads/2020/05/medal-icon01_1200x630.png" alt="">
+                </div>
+            <% else %>
+                <div class="award-bool not">
+                    <img class="no" src="https://clipground.com/images/grey-circle-png-9.png" alt="">
+                </div>
+            <% end %>
+        </div>
     </div>
 </div>
