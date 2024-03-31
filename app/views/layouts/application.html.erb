@@ -19,7 +19,7 @@
         <div class="l-header__logo">
           <h1>
             <%= link_to root_path do %>
-              <%= image_tag 'logo.svg', alt: 'ロゴ',size: '230x40' %>
+              <%= image_tag 'https://cdn.icon-icons.com/icons2/1144/PNG/512/homepage_80953.png', alt: 'ロゴ', class: "image-tag"%>
             <% end %>
           </h1>
         </div>
@@ -53,7 +53,7 @@
                 <%= link_to 'ログイン',new_user_session_path, style: "text-decoration: none; color: blue; padding-left:30px; font-weight:bold;font-size:17px;", class: "login-button" %>
               </li>
               <li class="l-gnav__button">
-                <%= link_to '無料会員登録',new_user_registration_path, style: "text-decoration: none; color: blue;", class: 'c-button--square-yellow' %>
+                <%= link_to '新規登録',new_user_registration_path, style: "text-decoration: none; color: blue;", class: 'c-button--square-yellow' %>
               </li>
             </ul>
           </div>
