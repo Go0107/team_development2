@@ -12,6 +12,10 @@ class ReportsController < ApplicationController
   def create
     @report = Report.new(report_params)
     if @report.save
+      @current_user = current_user
+      @user_awards = UserAward.find_by(user_id: @current_user.id)
+      @user_awards&.award_1 = true
+      @user_awards&.save
       redirect_to user_path(current_user)
     else
       render :new

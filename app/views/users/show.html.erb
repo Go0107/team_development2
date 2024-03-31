@@ -1,19 +1,36 @@
 <div class="profile">
-    <img src="https://tadworks.jp/wp-content/uploads/2020/08/profile_icon.png">
-    <div class="profile-content">
-        <h2><%= @user.name %></h2>
-        <p><%= @user.email %></p>
-    </div>
+  <img src="https://tadworks.jp/wp-content/uploads/2020/08/profile_icon.png">
+  <div class="profile-content">
+    <h2><%= @user.name %></h2>
+    <p><%= @user.email %></p>
+  </div>
 </div>
-<div class="my-journals">
-    <div class="container">
-        <div class="my-journals-title">
-            <h1>過去の投稿</h1>
-        </div>
-        <%# each文にする %>
-        <div class="my-journal">
-            <%# 日報の中身 %>
-        </div>
-    </div>
 
+<div class="my-journals">
+  <div class="container">
+    <div class="my-journals-title">
+      <h1>過去の投稿</h1>
+    </div>
+    <%# each文にする %>
+    <% @posts.each do |post| %>
+      <div class="my-journal">
+        <%# 日報の中身 %>
+        <div class="journal-body">
+          <p class="journal-date"><%= post.date %></p>
+          <div class="content">
+            <p style="margin-top: 5px;">【学習時間】</p>
+            <p class="content-body"><%= post.study_time %>時間</p>
+          </div>
+          <div class="content">
+            <p>【学習内容】</p>
+            <p class="content-body"><%= post.study_content %></p>
+          </div>
+          <div class="content">
+            <p>【振り返り】</p>
+            <p class="content-body"><%= post.reflection %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
